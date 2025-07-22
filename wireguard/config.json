@@ -1,0 +1,31 @@
+{
+  "log": {
+    "level": "info"
+  },
+  "endpoints": [
+    {
+      "type": "wireguard",
+      "tag": "wg-ep",
+      "system": true,
+      "mtu": 1408,
+      "address": [
+        "10.66.66.1/24"
+      ],
+      "private_key": "iPpw+mc6tFo8AVj81tMWpsml+TsH1rxatKhTDIEy21E=",
+      "listen_port": 51820,
+      "peers": [
+        {
+          "address": "10.66.66.2",
+          "public_key": "sCqe0awB7ReAMxBJENENNIK/c6rLmBui4RFfSzFysA8=",
+          "allowed_ips": ["10.66.66.2/32"],
+          "persistent_keepalive_interval": 25
+        }
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "direct"
+    }
+  ]
+}

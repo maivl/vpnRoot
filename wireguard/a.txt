@@ -1,0 +1,18 @@
+
+# 临时开启（重启后失效）
+sudo sysctl -w net.ipv4.ip_forward=1
+sudo sysctl -w net.ipv6.conf.all.forwarding=1
+
+# 永久生效，添加到 /etc/sysctl.d/99-sysctl.conf
+echo "net.ipv4.ip_forward=1" | sudo tee /etc/sysctl.d/99-sysctl.conf
+echo "net.ipv6.conf.all.forwarding=1" | sudo tee -a /etc/sysctl.d/99-sysctl.conf
+
+# 立即应用
+sudo sysctl --system
+
+
+
+
+
+PrivateKey: iPpw+mc6tFo8AVj81tMWpsml+TsH1rxatKhTDIEy21E=
+PublicKey: sCqe0awB7ReAMxBJENENNIK/c6rLmBui4RFfSzFysA8=

@@ -1,0 +1,35 @@
+{
+  "log": {
+    "level": "info"
+  },
+  "inbounds": [
+    {
+      "type": "vmess",
+      "tag": "vmess-in",
+      "listen": "0.0.0.0",
+      "listen_port": 443,
+      "users": [
+        {
+          "uuid": "fc3c93ab-343f-49aa-bd12-8d02b29c9cf7"
+        }
+      ],
+      "tls": {
+        "enabled": true,
+        "server_name": "cf.fynut.com",
+        "alpn": ["http/1.1"],
+        "certificate_path": "/etc/ssl/fullchain.pem",
+        "key_path": "/etc/ssl/private.key"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/vmess-ws"
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "direct"
+    }
+  ]
+}
+
